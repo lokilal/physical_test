@@ -3,6 +3,10 @@ import datetime
 
 
 def main(request):
+    """
+    Вначале находим кол-во недель между датами, затем проверяем является ли
+    день понедельником.
+    """
     context = {}
     if request.method == 'POST':
         date_from_request = request.POST['date'].split('-')
@@ -15,6 +19,3 @@ def main(request):
     return render(
         request, 'index.html', context
     )
-
-##52, 53
-
