@@ -8,7 +8,7 @@ def main(request):
     день понедельником.
     """
     context = {}
-    if request.method == 'POST':
+    if request.method == 'POST' and len(request.POST['date']) != 0:
         date_from_request = request.POST['date'].split('-')
         date_start = datetime.date(2019, 1, 1)
         date_end = datetime.date(*[int(i) for i in date_from_request])
