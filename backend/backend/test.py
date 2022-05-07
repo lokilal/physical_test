@@ -17,7 +17,7 @@ class ViewsTest(TestCase):
         self.assertEqual(self.post_request('2019-01-05'), 1)
 
     def test_next_week(self):
-        self.assertEqual(self.post_request('2019-01-07'), 2)
+        self.assertEqual(self.post_request('2019-01-06'), 2)
 
     def test_last_week_of_year(self):
         self.assertEqual(self.post_request('2019-12-30'), 53)
