@@ -5,8 +5,14 @@
     <title>Title</title>
 </head>
 <body>
-<p>
-    Hello World
-</p>
+<form action="{% url 'main' %}" method="POST">
+    {% csrf_token %}
+    <p>
+        <label for="date">Введите дату </label>
+        <input type="date" id="date" name="date"/>
+        <input type="submit" value="Вычислить">
+    </p>
+    <p>Неделя номер: {{ weeks }}</p>
+</form>
 </body>
 </html>
