@@ -9,7 +9,7 @@
     {% csrf_token %}
     <p>
         <label for="date">Введите дату </label>
-        <input type="date" id="date" name="date"/>
+        <input type="date" id="date" name="date" value="2019-01-01"/>
         <input type="submit" value="Вычислить">
     </p>
     <p>Неделя номер: {{ weeks }}</p>

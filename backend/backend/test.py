@@ -1,8 +1,6 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 
-from .views import main
-
 
 class ViewsTest(TestCase):
 
@@ -26,3 +24,7 @@ class ViewsTest(TestCase):
 
     def test_week_with_next_year(self):
         self.assertEqual(self.post_request('2020-12-30'), 105)
+
+    def test_date_before_start(self):
+        error_message = 'Выберите дату после 01.01.2019'
+        self.assertEqual(self.post_request('2018-12-30'), error_message)
